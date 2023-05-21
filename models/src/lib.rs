@@ -3,9 +3,10 @@ use diesel::{pg::PgConnection, Connection};
 use dotenvy::dotenv;
 use std::env;
 
-mod post;
-mod tag;
-mod user;
+pub mod post;
+pub mod schema;
+pub mod tag;
+pub mod user;
 
 pub fn establish_connection() -> PgConnection {
     dotenv().ok();
