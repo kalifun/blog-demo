@@ -2,14 +2,14 @@
 -- Table Definition
 CREATE TABLE "public"."posts" (
     "id" uuid NOT NULL,
-    "title" varchar,
+    "title" varchar NOT NULL,
     "desc" text,
-    "body" text,
-    "user_id" uuid,
+    "body" text NOT NULL,
+    "user_id" uuid NOT NULL,
     "tag_id" uuid,
-    "state" int2,
-    "create_time" timestamp,
-    "update_time" timestamp,
+    "state" int2 NOT NULL,
+    "create_time" timestamp NOT NULL,
+    "update_time" timestamp NOT NULL,
     CONSTRAINT "posts_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE SET NULL,
     CONSTRAINT "posts_tag_id_fkey" FOREIGN KEY ("tag_id") REFERENCES "public"."tags"("id") ON DELETE SET NULL,
     PRIMARY KEY ("id")

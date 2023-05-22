@@ -3,14 +3,14 @@
 diesel::table! {
     posts (id) {
         id -> Uuid,
-        title -> Nullable<Varchar>,
+        title -> Varchar,
         desc -> Nullable<Text>,
-        body -> Nullable<Text>,
-        user_id -> Nullable<Uuid>,
+        body -> Text,
+        user_id -> Uuid,
         tag_id -> Nullable<Uuid>,
-        state -> Nullable<Int2>,
-        create_time -> Nullable<Timestamp>,
-        update_time -> Nullable<Timestamp>,
+        state -> Int2,
+        create_time -> Timestamp,
+        update_time -> Timestamp,
     }
 }
 
