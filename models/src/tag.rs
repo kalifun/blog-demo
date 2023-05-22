@@ -4,10 +4,12 @@ use diesel::prelude::*;
 
 use crate::schema::tags;
 
+use uuid::Uuid;
+
 #[derive(Queryable)]
 #[diesel(table_name = tags)]
 pub struct Tag {
-    pub id: String,
+    pub id: Uuid,
     pub name: String,
     pub create_time: SystemTime,
     pub update_time: SystemTime,
